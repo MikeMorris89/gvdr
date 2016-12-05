@@ -10,21 +10,13 @@ library(shiny)
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  h2("Google Visualizations Motion Charts")
+  ,p("This demo shows how country level data can be accessed from the World Bank via their API and displayed with a Motion Chart.")
+  ,p("Click some buttons to make it move!")
 
   # Sidebar with a slider input for number of bins
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
-    ),
-
-    # Show a plot of the generated distribution
-    mainPanel(
-      plotOutput("distPlot")
+  ,fluidPage(
+    htmlOutput("wb")    
     )
-  )
+  
 ))

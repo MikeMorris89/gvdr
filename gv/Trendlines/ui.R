@@ -10,21 +10,14 @@ library(shiny)
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Google Visualizations Trendlines."),
 
   # Sidebar with a slider input for number of bins
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
-    ),
-
-    # Show a plot of the generated distribution
-    mainPanel(
-      plotOutput("distPlot")
+  tabsetPanel(
+    tabPanel("Scatter plot",htmlOutput("scatter"))
+    ,tabPanel("Scatter plot with Trendline",htmlOutput("Scatterexponential"))
+    ,tabPanel("ColumnChart",htmlOutput("ColumnChart"))
+    ,tabPanel("Column Chart with Trendline",htmlOutput("ColumnChartTrendline"))
     )
   )
-))
+)
